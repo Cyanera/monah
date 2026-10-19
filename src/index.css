@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("./assets/fonts/thmanyahseriftext-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("./assets/fonts/thmanyahseriftext-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("./assets/fonts/thmanyahseriftext-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("./assets/fonts/thmanyahseriftext-Bold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("./assets/fonts/thmanyahseriftext-Black.woff2") format("woff2");
+  font-weight: 800 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Thmanyah Serif Text", serif;
+  --font-serif: "Thmanyah Serif Text", serif;
+
+  --color-olive-50: #f5f7ec;
+  --color-olive-100: #e8eed5;
+  --color-olive-200: #d2dcae;
+  --color-olive-300: #b2c27c;
+  --color-olive-400: #92a653;
+  --color-olive-500: #75893a;
+  --color-olive-600: #5e702d;
+  --color-olive-700: #4f5f2a;
+  --color-olive-800: #3d4a23;
+  --color-olive-900: #2b3419;
+
+  --color-cream: #fbf7ec;
+  --color-beige: #f1e8d0;
+  --color-sand: #e4d4aa;
+  --color-gold: #b98a2e;
+  --color-gold-soft: #f3e3b3;
+  --color-clay: #a85a36;
+  --color-clay-soft: #f6e1d6;
+  --color-ink: #25281a;
+
+  --shadow-soft: 0 1px 2px rgb(43 52 25 / 0.05), 0 8px 24px -8px rgb(43 52 25 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(43 52 25 / 0.06), 0 18px 40px -12px rgb(43 52 25 / 0.22);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-pop: pop 0.22s ease-out both;
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle woven pattern used behind the hero and dark sections */
+.pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.09) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
